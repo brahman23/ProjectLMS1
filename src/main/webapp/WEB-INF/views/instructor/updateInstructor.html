@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update-instructor</title>
+</head>
+<body>
+<form
+        th:action="@{/{courseId}/{id}/updateInstructor(id=${instructor.id}, courseId=${courseId})}"
+        th:object="${instructor}"
+        method="post">
+
+    <input type="hidden" name="id" th:field="*{id}">
+    <label>
+        <input type="text" name="firstName" th:field="*{firstName}" placeholder="First Name">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="lastName" th:field="*{lastName}" placeholder="Last Name">
+    </label>
+    <br><br>
+    <select>
+        <option>+996</option>
+        <option>+7</option>
+        <option>+8</option>
+    </select>
+    <label>
+        <input type="number" name="phoneNumber" th:field="*{phoneNumber}" placeholder="Image">
+    </label>
+    <br><br>
+    <label>
+        <input type="email" name="email" th:field="*{email}" placeholder="Email">
+    </label>
+    <br><br>
+    <label>
+        <input type="text" name="specialization" th:field="*{specialization}" placeholder="Specialization">
+    </label>
+    <br><br>
+    <input type="submit" value="Add">
+
+</form>
+</body>
+</html>
